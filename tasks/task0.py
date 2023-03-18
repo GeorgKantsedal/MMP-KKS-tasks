@@ -1,8 +1,8 @@
 def solution(l, x):
     '''
-    Return maximum integer given list of integers.
+    Check if x in given list of integers.
     Args:
-        l - List[Int] - list of incoming integers from which maximum is selected.
+        l - List[Int] - list of incoming integers.
         x - element that should be found
     Returns:
         Boolean - True if found.
