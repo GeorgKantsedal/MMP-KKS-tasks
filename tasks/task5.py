@@ -1,9 +1,3 @@
-"""
-Instructions:
-
-Fill in the methods of the DataCleaner class to produce the same printed results
-as in the comments below. Good luck, and have fun!
-"""
 from __future__ import annotations
 import os
 
