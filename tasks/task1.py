@@ -53,6 +53,13 @@ class Rect:
 
 
 def solution2(r1: Rect, r2: Rect):
+    """
+    Args:
+        r1 - Rect
+        r2 - Rect
+    Returns:
+        float.
+        """
     return 0
 
 
