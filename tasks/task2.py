@@ -31,11 +31,12 @@
 
 from decimal import *
 
+
 def solution(l):
     return 5
 
-def test_func1():
 
+def test_func1():
     assert solution('15') == 5, "Check your implementation!"
     assert solution('4') == 2, "Check your implementation!"
     assert solution('43') == 8, "Check your implementation!"
@@ -46,4 +47,3 @@ def test_func1():
 if __name__ == "__main__":
     test_func1()
     print(solution('12'))
-    

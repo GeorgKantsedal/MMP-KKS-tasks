@@ -1,40 +1,35 @@
 from __future__ import annotations
-import os
-
-import numpy as np
 import pandas as pd
-import pickle
-
-from typing import Dict, Any, List, Tuple
 
 
 chem = pd.DataFrame({
-        "action_id": [10, 10, 10, 10, 11, 11, 11],
-        "Mn": [1.0, 1.1, 2.5, 2.5, 0.2, 0.3, 1.0],
-        "timestamp": [
-            "11:30",
-            "11:35",
-            "12:00",
-            "12:05",
-            "23:00",
-            "23:30",
-            "00:10"]})
+    "action_id": [10, 10, 10, 10, 11, 11, 11],
+    "Mn": [1.0, 1.1, 2.5, 2.5, 0.2, 0.3, 1.0],
+    "timestamp": [
+        "11:30",
+        "11:35",
+        "12:00",
+        "12:05",
+        "23:00",
+        "23:30",
+        "00:10"]})
 addings = pd.DataFrame({
-        "action_id": [10, 10, 11],
-        "Mn": [500, 100, 400],
-        "timestamp": [
-            "11:45",
-            "12:00",
-            "23:55"]})
+    "action_id": [10, 10, 11],
+    "Mn": [500, 100, 400],
+    "timestamp": [
+        "11:45",
+        "12:00",
+        "23:55"]})
 
 result = pd.DataFrame({
-        "action_id": [10, 11],
-        "Mn_add": [600, 400],
-        "Mn_befor": [1.1, 0.3],
-        "Mn_after": [2.5, 1.0],
-        "timestamp": [
-            "11:45",
-            "23:55"]})
+    "action_id": [10, 11],
+    "Mn_add": [600, 400],
+    "Mn_befor": [1.1, 0.3],
+    "Mn_after": [2.5, 1.0],
+    "timestamp": [
+        "11:45",
+        "23:55"]})
+
 
 def solution(chem, addings):
     """

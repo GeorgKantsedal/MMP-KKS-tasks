@@ -37,7 +37,8 @@
 def solution1(x, y):
     return None
 
-#subtask2
+
+# subtask2
 # The Grandest Staircase Of Them All
 # ==================================
 
@@ -58,7 +59,7 @@ def solution1(x, y):
 # #
 # ##
 # 31
- 
+
 # But when N = 5, there are two ways you can build a staircase from the given bricks. The two staircases can have heights (4, 1) or (3, 2), as shown below:
 
 # #

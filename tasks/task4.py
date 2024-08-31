@@ -5,13 +5,9 @@ Fill in the methods of the DataCleaner class to produce the same printed results
 as in the comments below. Good luck, and have fun!
 """
 from __future__ import annotations
-import os
 
 import numpy as np
 import pandas as pd
-import pickle
-
-from typing import Dict, Any, List, Tuple
 
 
 class DataCleaner:
@@ -19,15 +15,15 @@ class DataCleaner:
     Transform a pandas df while keeping track of the history of transformations to
     allow reverting back to earlier state.
     """
+
     def __init__(self, df: pd.DataFrame):
         pass
-    
+
     def __del__(self):
         """
         Dont forget to clean files on server after finish
         """
         pass
-
 
 
 transactions = pd.DataFrame(
@@ -136,6 +132,7 @@ print(f"Loaded DataCleaner current df:\n{loaded_dc.current}")
 transactions_dc.revert()
 print(f"Reverting missing value imputation:\n{transactions_dc.current}")
 
+
 # Reverting missing value imputation:
 #    customer_id  amount           timestamp
 # 0           10    1.00 2020-10-08 11:32:01
@@ -149,7 +146,7 @@ print(f"Reverting missing value imputation:\n{transactions_dc.current}")
 
 def solution(transactions):
     rez = []
-    
+
     transactions_dc = DataCleaner(transactions)
     rez.append(f"Current dataframe:\n{transactions_dc.current}")
     rez.append(f"Current dtypes:\n{transactions_dc.current.dtypes}")
@@ -168,6 +165,7 @@ def solution(transactions):
     transactions_dc.revert()
     rez.append(f"Reverting missing value imputation:\n{transactions_dc.current}")
     return rez
+
 
 if __name__ == "__main__":
     pass
