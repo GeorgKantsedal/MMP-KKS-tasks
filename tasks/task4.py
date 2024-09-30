@@ -57,7 +57,7 @@ print(f"Current dataframe:\n{transactions_dc.current}")
 
 print(f"Current dtypes:\n{transactions_dc.current.dtypes}")
 
-# Initial dtypes:
+# Current dtypes:
 # customer_id      int64
 # amount         float64
 # timestamp       object
@@ -71,12 +71,13 @@ print(f"Changed dtypes to:\n{transactions_dc.current.dtypes}")
 # customer_id             int64
 # amount                float64
 # timestamp      datetime64[ns]
+# dtype: object
 
 transactions_dc.impute_missing(columns=["amount"])
 
 print(f"Imputed missing as overall mean:\n{transactions_dc.current}")
 
-# Imputed missing as mean:
+# Imputed missing as overall mean:
 #    customer_id     amount           timestamp
 # 0           10   1.000000 2020-10-08 11:32:01
 # 1           10   1.310000 2020-10-08 13:45:00
@@ -99,14 +100,14 @@ print(f"History of changes:\n{transactions_dc.history}")
 # 3           10    0.50  2020-10-08 12:30:00
 # 4           11    0.20  2020-10-07 01:29:33
 # 5           11    0.20  2020-10-08 13:45:00
-# 6           10     NaN  2020-10-09 02:05:21), ("Adjusted dtypes using {'timestamp': <class 'numpy.datetime64'>}",    customer_id  amount           timestamp
+# 6           10     NaN  2020-10-09 02:05:21), ('Adjusted dtypes using {'timestamp': 'datetime64[ns]'}',    customer_id  amount           timestamp
 # 0           10    1.00 2020-10-08 11:32:01
 # 1           10    1.31 2020-10-08 13:45:00
 # 2           13   20.50 2020-10-07 05:10:30
 # 3           10    0.50 2020-10-08 12:30:00
 # 4           11    0.20 2020-10-07 01:29:33
 # 5           11    0.20 2020-10-08 13:45:00
-# 6           10     NaN 2020-10-09 02:05:21), ("Imputed missing in ['amount']",    customer_id     amount           timestamp
+# 6           10     NaN 2020-10-09 02:05:21), ('Imputed missing in ['amount']',    customer_id     amount           timestamp
 # 0           10   1.000000 2020-10-08 11:32:01
 # 1           10   1.310000 2020-10-08 13:45:00
 # 2           13  20.500000 2020-10-07 05:10:30
@@ -145,12 +146,17 @@ print(f"Reverting missing value imputation:\n{transactions_dc.current}")
 
 
 def solution(transactions):
+    """Do not change. Could be:
+    "timestamp": np.datetime64 or "timestamp": "datetime64[ns]"
+    depends on realisation
+    """
     rez = []
 
     transactions_dc = DataCleaner(transactions)
     rez.append(f"Current dataframe:\n{transactions_dc.current}")
     rez.append(f"Current dtypes:\n{transactions_dc.current.dtypes}")
-    transactions_dc.adjust_dtype({"timestamp": np.datetime64})
+    # transactions_dc.adjust_dtype({"timestamp": np.datetime64})
+    transactions_dc.adjust_dtype({"timestamp": "datetime64[ns]"})
     rez.append(f"Changed dtypes to:\n{transactions_dc.current.dtypes}")
 
     transactions_dc.impute_missing(columns=["amount"])
@@ -163,7 +169,9 @@ def solution(transactions):
     rez.append(f"Loaded DataCleaner current df:\n{loaded_dc.current}")
 
     transactions_dc.revert()
-    rez.append(f"Reverting missing value imputation:\n{transactions_dc.current}")
+    rez.append(
+        f"Reverting missing value imputation:\n{transactions_dc.current}"
+    )
     return rez
 
 

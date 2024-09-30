@@ -32,7 +32,7 @@ tree3 = get_tree(50)
 
 def solution1(tree: Node):
     """
-    Return maximum integer given list of integers.
+    Return sum of values.
     Args:
         l - tree
     Returns:
