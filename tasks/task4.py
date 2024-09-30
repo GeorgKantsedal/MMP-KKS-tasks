@@ -100,14 +100,14 @@ print(f"History of changes:\n{transactions_dc.history}")
 # 3           10    0.50  2020-10-08 12:30:00
 # 4           11    0.20  2020-10-07 01:29:33
 # 5           11    0.20  2020-10-08 13:45:00
-# 6           10     NaN  2020-10-09 02:05:21), ('Adjusted dtypes using {'timestamp': 'datetime64[ns]'}',    customer_id  amount           timestamp
+# 6           10     NaN  2020-10-09 02:05:21), ("Adjusted dtypes using {'timestamp': 'datetime64[ns]'}",    customer_id  amount           timestamp
 # 0           10    1.00 2020-10-08 11:32:01
 # 1           10    1.31 2020-10-08 13:45:00
 # 2           13   20.50 2020-10-07 05:10:30
 # 3           10    0.50 2020-10-08 12:30:00
 # 4           11    0.20 2020-10-07 01:29:33
 # 5           11    0.20 2020-10-08 13:45:00
-# 6           10     NaN 2020-10-09 02:05:21), ('Imputed missing in ['amount']',    customer_id     amount           timestamp
+# 6           10     NaN 2020-10-09 02:05:21), ("Imputed missing in ['amount']",    customer_id     amount           timestamp
 # 0           10   1.000000 2020-10-08 11:32:01
 # 1           10   1.310000 2020-10-08 13:45:00
 # 2           13  20.500000 2020-10-07 05:10:30
