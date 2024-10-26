@@ -39,5 +39,8 @@ def solution(chem, addings):
     "Mn_befor" - хім аналіз до внесення
     "Mn_after" - хім аналіз відразу після внесення
     "timestamp" - початок внесення речовини
+
+    hint:
+    you can return str(dataframe) to be sure that data types are ok
     """
     return None

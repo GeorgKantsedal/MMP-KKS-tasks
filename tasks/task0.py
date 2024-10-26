@@ -6,6 +6,9 @@ def solution(l, x):
         x - element that should be found
     Returns:
         Boolean - True if found.
+
+    hint:
+        Sometimes in next labs data types are very important. So pls check every possible output version.
     """
     return False
 

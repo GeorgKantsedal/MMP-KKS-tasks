@@ -149,6 +149,11 @@ def solution(transactions):
     """Do not change. Could be:
     "timestamp": np.datetime64 or "timestamp": "datetime64[ns]"
     depends on realisation
+
+    hint:
+    DO NOT FORGET destructor!
+    hint x2
+    You can save alot of memory by saving only changes
     """
     rez = []
 
